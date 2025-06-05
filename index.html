@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>주식 분석 도구</title>
+  <link rel="manifest" href="/manifest.json" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          console.log('ServiceWorker 등록 성공:', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker 등록 실패:', err);
+        });
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>📊 주식 분석 도구</h1>
+  <p>이 앱은 PWA로 작동하며, 홈 화면에 추가할 수 있습니다.</p>
+</body>
+</html>
